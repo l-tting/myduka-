@@ -9,6 +9,8 @@ Once connected to postgres:
 2.Next connect to that database
   \c myduka
 3.Create tables using the following commands:
+
+
     CREATE TABLE products (
         id SERIAL PRIMARY KEY,
         name VARCHAR(100) NOT NULL,
@@ -37,3 +39,7 @@ Once connected to postgres:
         phone_number VARCHAR(100) NOT NULL,
         password VARCHAR(255) NOT NULL
     );
+
+Pre-requisites:
+*1.SQL* -> primary keys, foreign keys, relationships, sql queries , joins,    aggeregate functions, sql clauses (where)
+*2.Python* -> data types , data structures(lists and tuples),conditional statements, loops, functions
