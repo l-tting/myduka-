@@ -40,7 +40,7 @@ Once connected to postgres:
         password VARCHAR(255) NOT NULL
     );
 
-Pre-requisites:
+*Pre-requisites*:
 *1.SQL* -> primary keys, foreign keys, relationships, sql queries , joins, aggeregate functions, sql clauses (where)
 *2.Python* -> data types , data structures(lists and tuples),conditional statements, loops, functions
 
@@ -94,3 +94,39 @@ localhost -> domain name for 127.0.0.1
 
 
 
+*performing database operations with psycopg2*
+-> to perform db operations , we use a cursor object 
+*cur* -> object used to perform db operations
+*cur.execute()* -> a function / method used by cursor object to execute sql queries
+*cur.fetchall()* -> a function / method used to extract data from a Postgres environmnent and back to Python
+
+[(136, 'milk', Decimal('50.00'), Decimal('60.00')), (137, 'bread', Decimal('55.00'), Decimal('65.00'))]
+
+*N/B* -> expect your data from cur.fetchall() as a *list of tuples*
+list -> entire dataset
+tuple -> a single record / row in that dataset
+
+*insert data with psycopg2*
+cur.execute(insert query here...)
+*conn.commit()* -> permanently saves your data in the db
+
+
+
+*transaction states*
+Active -> means an sql query is still running
+Partially Committed -> query has finished running but the data has not been permanently saved in the database
+Aborted  -> the query has been stopped before completion
+Committed -> query finished running and data has been permanently saved in the database
+
+
+insert data ----> partially committed ----> committed
+
+*To have our insert functions be reusable we let it take parameter(s)*
+
+
+*%s* -> represents psycopg2 placeholders 
+
+*Task*
+Using functions write 2 functions:
+1.get_sales() 
+2.insert_sales()
