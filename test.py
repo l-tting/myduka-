@@ -1,3 +1,9 @@
-def add_numbers(x,y):
-    return x + y
+value = """ 
+     This is a sample
+     multiline
+     string
+     in. Python
 
+"""
+
+print(value)

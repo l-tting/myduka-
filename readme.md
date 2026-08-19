@@ -46,6 +46,8 @@ Once connected to postgres:
 
 
 
+insert into stock(1,'eggs')
+
 insert into products(name,buying_price,selling_price)values('milk',50,60);
 
 
@@ -130,3 +132,26 @@ insert data ----> partially committed ----> committed
 Using functions write 2 functions:
 1.get_sales() 
 2.insert_sales()
+
+
+*sales per product*
+select products.name , sum(sales.quantity * products.selling_price ) as total_sales from sales join products on 
+sales.pid = products.id group by products.name;
+
+
+*profit per day*
+select date(sales.created_at) as day, sum((products.selling_price - products.buying_price) * sales.quantity) as total_profit from sales join products on sales.pid = products.id group by day;
+
+
+
+*Multiline strings*
+-> A string that spans more than a single line 
+-> To use a multiline string we use triple opening and closing quotations
+
+*Task*
+Use psycopg2 to write functions that fetch the followng data :
+*sales per day*
+*profit per product*
+
+
+
