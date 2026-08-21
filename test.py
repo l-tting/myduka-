@@ -1,9 +1,3 @@
-value = """ 
-     This is a sample
-     multiline
-     string
-     in. Python
+x = 5
+print(type(x))
 
-"""
-
-print(value)

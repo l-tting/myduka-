@@ -151,7 +151,65 @@ select date(sales.created_at) as day, sum((products.selling_price - products.buy
 *Task*
 Use psycopg2 to write functions that fetch the followng data :
 *sales per day*
+select date(sales.created_at) as day , sum(sales.quantity * products.selling_price) as t_sales from sales join products
+on sales.pid = products.id group by day;
 *profit per product*
+select products.name as p_name , sum((products.selling_price - products.buying_price) * sales.quantity) as profit from
+sales join products on sales.pid = products.id group by p_name;
 
 
+*OBJECT ORIENTED PROGRAMMING*
+-> OOP : The paradigm or concept of building programs around classes and objects
 
+Primitive data types -> inbuilt data types 
+int 
+float
+str
+bool
+
+Jane -> str
+
+We have 2 broad classifications of data types:
+1.Inbuilt data types -> come with the programming language e.g int, float, str, bool
+2.User defined types -> custom types built using classes and objects to represent custom data 
+
+ *class*
+ -> A template for creating objects
+ *object*
+ ->An instance of a class
+
+ blueprint used to build the house -> class
+ the actual / real building -> object
+
+Any class has 3 things:
+*1.Identity*
+    -> the unique name used to identify a class e.g. class Car
+    -> Typically we give classes identities in title case
+*2.State*
+    -> represents data in a class
+    -> answers the question: what does a class have?
+    -> we use *attributes* to represent state
+    ->*attributes* : are just variables inside a class
+*3.Behaviour*
+    -> represents what the class can do?
+    -> this is enabled by use of *methods*
+    -> *method*: is just a function inside a class
+
+
+*examples*
+class Car
+1.Identity : Car
+2.State -> no_of_wheels,engine_capacity,no_of_doors,is_electric,make
+3.Behaviour -> start, stop, speed, park, carry_goods
+
+
+class Student
+class Dog
+
+__init__() -> a constructor 
+*constructor* -> a special method that is automatically called when creating an object ,used to 
+   initialize an object with some values
+   -> It has leading and trailing double underscores -> it is a *dunder method*
+   -> *dunder* -> double underscore
+   -> the purpose of the underscores is to identify this method as a special method
+*self* -> refers to the object itself
