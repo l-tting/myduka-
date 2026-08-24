@@ -213,3 +213,11 @@ __init__() -> a constructor
    -> *dunder* -> double underscore
    -> the purpose of the underscores is to identify this method as a special method
 *self* -> refers to the object itself
+
+
+*Task on OOP*
+1.Create a class called BankAccount with the following attributes: -account number -balance -owner name -date opened 
+2.Give the above BankAccount class the following behaviour or methods: -deposit() -withdraw() -display_info()
+3.Create two BankAccount objects that can deposit, withdraw and display_info
+
+**INHERITANCE IN OOP**

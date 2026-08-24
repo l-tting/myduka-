@@ -6,22 +6,38 @@ class Person:
         self.gender = gender
 
 
+    def talks(self,words):
+        print(f"{self.name} talks and said {words}")
+
+
+    def sleeps(self,time):
+        print(f"{self.name} sleeps at {time}")
+
+
+    def display_info(self):
+        print("-------Object Info-----------")
+        print(f'Name : {self.name}')
+        print(f"Age: {self.age}")
+        print(f"Gender: {self.gender}")
+
+
 
 # person1 object
 person1 = Person("Alice Kamau",23,"Female")
 print(type(person1))
-print(person1.name)
-print(person1.age)
-print(person1.gender)
+person1.display_info()
+person1.talks("OOP is very easy")
+person1.sleeps("10pm")
+
 print("--------------------------------------------")
 
 
 #person2 object
 person2 = Person("Jack", 25, "Male")
 print(type(person2))
-print(person2.name)
-print(person2.age)
-print(person2.gender)
+person2.display_info()
+person2.talks("Python is just too hard")
+person2.sleeps("11pm")
 
 
 
