@@ -218,6 +218,69 @@ __init__() -> a constructor
 *Task on OOP*
 1.Create a class called BankAccount with the following attributes: -account number -balance -owner name -date opened 
 2.Give the above BankAccount class the following behaviour or methods: -deposit() -withdraw() -display_info()
-3.Create two BankAccount objects that can deposit, withdraw and display_info
+3.Create two BankAccount objects that can deposit, withdraw and display_info––
+
+
+
+*N/B:-*
+When passing default arguments in the __init__ constructor , it has to be the last argument passed
+
 
 **INHERITANCE IN OOP**
+-> A feature of OOP that allows one class to inherit or borrow features / properties from another class
+*Parent class* 
+ -> The class that is inherited from
+ -> It is also called a base class or a super class
+*Child class*
+ -> the class that inherits from the parent
+ -> It is also called a derived class or subclass
+
+e.g. Animal -> Horse
+     Person -> Student
+
+Inheritance creates "Is -A" relationship
+e.g Dog inherits from Animal ===>Dog is an Animal
+
+
+*Types of Inheritance*
+*1.Single level inheritance*
+-> One child inherits from one parent
+*2.Multiple inheritance*
+-> One child inheriting from multiple parents
+*3.Multilevel Inheritance*
+-> One child class inherits from another child class
+*4.Hierrarchical Inheritance*
+-> Multiple child classes from one parent
+
+
+*WHY INHERITANCE?* -> promotes reusability of programs and reduces redundancy
+
+*super* -> this is a keyword that allows us to access the parent's methods from inside the child class
+
+*method overriding*
+-> when a child class provides its own implementation of a method that was already defined in the parent
+class
+-> the parent provides general behaviour while the child provides specific behaviour 
+
+*Task on inheritance*
+
+Python OOP — Inheritance Task: Vehicle Management System
+
+Create a small vehicle management system using inheritance. Start by creating a parent class called Vehicle. The Vehicle class should have three attributes: brand, model, and year. It should have a display_info() method that prints the vehicle's basic information. Add a start() method that prints a simple message saying the vehicle has started, and a stop() method that prints a simple message saying the vehicle has stopped.
+
+Next, create a child class called Car that inherits from Vehicle. A Car should have an additional attribute called number_of_doors. Add a simple drive() method that prints a message saying the car is driving. Override the display_info() method so that it also displays the number of doors. Inside the overridden method, use super() to call the parent's display_info() method.
+
+Then create another child class called Motorcycle that also inherits from Vehicle. A Motorcycle should have an additional attribute called engine_cc, representing the engine size. Add a simple ride() method that prints a message saying the motorcycle is being ridden. Override display_info() so that it also displays the engine size. Again, use super() to call the parent's display_info() method.
+
+Your class structure should look like this:
+
+Vehicle
+   ├── Car
+   └── Motorcycle
+
+The Vehicle class should have start(), stop(), and display_info() methods. The Car should have a drive() method, while the Motorcycle should have a ride() method. Both child classes should override display_info() and use super().
+
+Finally, create one Car and one Motorcycle and test their methods
+
+
+*Combining method overriding with super()*
