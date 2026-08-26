@@ -282,5 +282,35 @@ The Vehicle class should have start(), stop(), and display_info() methods. The C
 
 Finally, create one Car and one Motorcycle and test their methods
 
+*Pillars of OOP*
+*1.Inheritance*
+*2.Polymorphism*
+-> Method overloading : methods have same name but different signatures e.g different parameters
+*3.Encapsulation*
+-> bundling data and methods together
+*4.Abstraction*
+-> Hiding inner complex implementation and providing only what is necessary => uses abstract classes
 
-*Combining method overriding with super()*
+*reference geeks for geeks for the above concepts*
+
+
+*INTRODUCTION TO FLASK*
+*framework vs library*
+
+option1 -> framework
+option2 -> library
+
+*framework* - a collection of prebuilt code and tools that are meant to help developers build applications easily without having to start from scratch but they require the developer to follow strict rules that are set by the framework 
+
+*examples of frameworks*
+1.Python - Flask, FastAPI, Django
+2.JavaScript - React, Vue, Angular, Svelte
+3.Java - Spring
+4.C# - .NET
+5.PHP - Laravel
+6.Golang - Chi, Gin
+7.Ruby - Ruby on Rails
+8.Rust - Tokio
+9.C++ - Qt , Drogon
+
+*flask* -> A python framework meant to build web applications
