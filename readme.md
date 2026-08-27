@@ -314,3 +314,61 @@ option2 -> library
 9.C++ - Qt , Drogon
 
 *flask* -> A python framework meant to build web applications
+
+*Routing in Flask*
+-> Routing is the mechanism of mapping / connecting URLs to Python functions . It is a system
+for resource navigation
+-> *URL* -> The full address that is used to access an application
+example of a url=>*https://meet.google.com/dsh-idtb-oqb*
+*parts of a url*
+*1.Protocol*
+ -> determines how data is transferred over a network 
+ -> http or https 
+ -> http : hypertext transfer protocol -> standard for sending data over a network for browsers
+        -> sends data as raw text
+ -> https : hypertext transfer protocol secure
+        -> sends data in encrypted format
+        -> end to end tls / ssl
+*2.Domain*
+-> human friendly name for an ip address e.g.www.google.com
+*3.Path*
+-> the specific resource to be accessed when using an application
+-> e.g /users
+
+
+=> Routing in flask is enabled through the use of a *decorator function* called *@app.route()*
+*decorator function* -> a function that determines or modifies the behaviour of another function
+ -> they have a signature '@' prefix
+
+-> @app.route() can take some arguments:
+    1.Path  -> e.g. /users , /, /products
+    2.Method
+
+@app.route('/') ----> decorator function
+def home():       ---> view function
+    return "Hello World!!"  ---> data to be returned
+
+
+*index route* --> symbolized using / -> this is the route of the default landing page
+*view function* -> the normal Python function meant to execute a specific task
+*N/B* :- View functions cannot have shared names
+
+https://techcamp.co.ke/
+https://techcamp.co.ke/about-us
+https://techcamp.co.ke/contact-us
+
+https://techcamp.co.ke/
+@app.route('/')
+def home():
+    return "Home page"
+
+
+
+https://techcamp.co.ke/about-us
+@app.route('/about-us')
+def about_us():
+    return "About Us page"
+
+
+@app.route() -> / -> def home()
+             -> /about-us -> def about_us()
