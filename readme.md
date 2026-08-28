@@ -372,3 +372,22 @@ def about_us():
 
 @app.route() -> / -> def home()
              -> /about-us -> def about_us()
+
+
+-> instead of returning single pieces of data, we should instead return full html pages and then 
+return as much data as we want in these pages
+->To return html pages , we must have the following project structure:
+>static
+  -> all static files -> css , js , images , videos , icons , favicons
+>templates
+  -> all html pages /files
+  -> a single html file is called a template
+
+
+-> To display these html pages , we then use a function called *render_template()* which
+is imported from flask
+
+
+*task* 
+-> create a well styled navbar having all routes in that nav and use href to pass the route value
+-> the navbar should be consistent and appear across all html pages
