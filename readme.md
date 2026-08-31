@@ -391,3 +391,21 @@ is imported from flask
 *task* 
 -> create a well styled navbar having all routes in that nav and use href to pass the route value
 -> the navbar should be consistent and appear across all html pages
+
+
+**template inheritance**
+-> a feature in Flask that allows us to build application pages from a parent page.
+-> The parent page / template has all common features of the entire application
+-> The child templates / pages then inherit from the parent
+-> To do this, define all common features in the parent / base template then have the child templates inherit from the base
+-> template inheritance is largely supported by a Flask feature called Jinja
+-> block title : defines a block within which we are able to pass the title 
+of any page that inherits from base
+-> block content : allows a page that inherits from base to pass its own unique content 
+==> Anything outside the block content appears across all inheriting pages
+{% extends 'base.html' %} -> inherit from base.html 
+
+*Task*
+-> Recreate your navbar (use a Bootstrap navbar) and have it in base.html
+-> ensure that navbar features across all inheriting pages
+-> Do the same with a real footer
