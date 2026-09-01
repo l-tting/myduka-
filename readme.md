@@ -398,7 +398,7 @@ is imported from flask
 -> The parent page / template has all common features of the entire application
 -> The child templates / pages then inherit from the parent
 -> To do this, define all common features in the parent / base template then have the child templates inherit from the base
--> template inheritance is largely supported by a Flask feature called Jinja
+-> template inheritance is largely supported by a Flask feature called *Jinja*
 -> block title : defines a block within which we are able to pass the title 
 of any page that inherits from base
 -> block content : allows a page that inherits from base to pass its own unique content 
@@ -408,4 +408,32 @@ of any page that inherits from base
 *Task*
 -> Recreate your navbar (use a Bootstrap navbar) and have it in base.html
 -> ensure that navbar features across all inheriting pages
--> Do the same with a real footer
+-> Do the same with a real footer 
+
+
+**Jinja**
+-> A templating engine integrated with Flask meant to render dynamic html pages
+-> It is simply syntax that is used depending on whether we are trying to render simple data or use control structures 
+
+-> jinja when rendering data : use {{ }}
+-> jinja when using control structures : {% %} 
+-> Jinja with control structures has to be initialized and terminated 
+
+*Control Structures* -> building blocks of a programming language
+-> Control structures in Python:
+*1.Sequence* 
+ -> A Python program executes top to bottom , left to right
+*2.Selection*
+-> Your program has decision making abilities ->  conditional statements
+*3.Repitition* 
+-> Your program can execute a task repeatedly -> iteration with loops
+
+{% if .....%} ---> initialization
+
+
+{% endif %} ---> termination
+
+
+*Task on Jinja*
+In the products route where we have the variable products = ['milk','eggs','shoes'] , use a for loop
+inside products.html to loop through the products and only display 'eggs' in a h1 tag
