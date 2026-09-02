@@ -435,5 +435,10 @@ of any page that inherits from base
 
 
 *Task on Jinja*
-In the products route where we have the variable products = ['milk','eggs','shoes'] , use a for loop
-inside products.html to loop through the products and only display 'eggs' in a h1 tag
+In the products route where we have the variable products = ['milk','eggs','shoes'] , use a for loop inside products.html to loop through the products and only display 'eggs' in a h1 tag
+
+
+*Task*
+-> Display the products data inside products.html using a Bootstrap table
+
+

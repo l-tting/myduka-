@@ -1,10 +1,13 @@
 from flask import Flask , render_template
+from database import get_products, get_sales
+
 
 # flask instance
 app = Flask(__name__)
 
-
-@app.route('/')
+#home route
+@app.route('/')   # decorator func
+#view function
 def home():
     name = "Alex"
     return render_template('index.html',name=name)
@@ -12,14 +15,15 @@ def home():
 
 @app.route('/products')
 def products():
-    products = ['milk','eggs','shoes']
+    products = get_products()
     return render_template('products.html',products=products)
 
 
 @app.route('/sales')
 def sales():
-    num = 12
-    return render_template('sales.html',num = num)
+    sales = get_sales()
+    return render_template('sales.html',sales = sales)
+
 
 
 @app.route('/stock')
@@ -33,9 +37,11 @@ def dashboard():
     return render_template('dashboard.html')
 
 
+
 @app.route('/login')
 def login():
     return render_template('login.html')
+
 
 
 @app.route('/register')

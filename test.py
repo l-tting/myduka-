@@ -1,5 +1,4 @@
-x = 5
+def sum_numbers(x,y):
+    return x + y
 
-x = 6
-
-print(x)
+    
