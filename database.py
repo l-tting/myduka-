@@ -13,6 +13,9 @@ def get_products():
     products = cur.fetchall()
     return products
 
+# prods = get_products()
+# print(prods)
+
 
 
 def insert_products(product_values):

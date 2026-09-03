@@ -442,3 +442,23 @@ In the products route where we have the variable products = ['milk','eggs','shoe
 -> Display the products data inside products.html using a Bootstrap table
 
 
+[(1, 'milk', Decimal('50.00'), Decimal('60.00')), (2, 'bread', Decimal('50.00'), Decimal('60.00'))]
+
+
+pid    name\
+
+*Task*
+1.Apply datatables for products and stock data
+2.Style the home / landing page accordingly ->
+    Header 
+    CTA 
+    Benefits of using the product
+    Features 
+    Trusted Logos
+3.Style your navbar and footer accordingly
+   Navbar -> space nav items  ->have register & login floated to the far right
+          -> get a logo and unique name for your application
+   Footer -> copyright & social media links 
+   --> have consistent colours for both navbar and footer
+
+   
