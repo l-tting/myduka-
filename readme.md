@@ -461,4 +461,56 @@ pid    name\
    Footer -> copyright & social media links 
    --> have consistent colours for both navbar and footer
 
+
+*POSTING DATA IN FLASK*
+-> Posting : sending a request from a client to a server
+-> Http has a request -response structure
+-> request : sending data from client to server
+-> response : data / message from server to client
+
+*POSTING PRODUCTS IN FLASK*
+*workflow / process*
+1.User is provided with a form to fill
+2.The form should have all product related fields 
+3.User will fill and submit this form to a route in the server
+4.The server will extract data from the form using a request object
+  N/B: data from the form is sent in key-value pair format
+      -> the key is used to access the value
+    -> the request object has access to some methods:
+         1.request.method -> used to identify what method has been defined in the form
+         2.request.form -> used to extract form data using its key
+5.Data is then processed 
+6.We reuse the insert_products() function after importing to add our new product
+7.User is notified of successfull / failed request
+8.User is redirected
+
    
+*form checklist for posting data*
+1.method attribute 
+   -> method represents what a server can do with a resource / data
+2.action attribute
+   -> represents the route in which the data is to be submitted to
+3.name attribute
+   -> value of the name attribute represents the key that is used to access the data by the request object
+4.input type
+5.button of type submit
+
+
+*methods*
+1.GET 
+ -> move data from a server to a client
+ -> e.g. displaying products / sales / stock
+2.POST
+  -> move data / resources from a client to a server as a request
+  -> e.g.add products / login / register / send a tweet
+3.PUT
+  -> update an existing resource
+  -> e.g.changing passwords / changing profile pics / changing prod name / prices
+3.DELETE
+  -> getting rid of a resource / data
+  -> deleting products
+
+
+p_name : "Eggs"
+b_price : 17
+s_price : 20
