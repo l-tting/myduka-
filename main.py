@@ -1,6 +1,5 @@
-from flask import Flask , render_template,request
-from database import get_products, get_sales,get_stock
-
+from flask import Flask , render_template,request, redirect,url_for
+from database import get_products, get_sales,get_stock,insert_products
 
 # flask instance
 app = Flask(__name__)
@@ -12,7 +11,7 @@ def home():
     name = "Alex"
     return render_template('index.html',name=name)
 
-
+# http://127.0.0.1:5000/products
 @app.route('/products')
 def products():
     products = get_products()
@@ -25,7 +24,12 @@ def add_products():
         product_name = request.form['p_name']
         buying_price = request.form['b_price']
         selling_price = request.form['s_price']
-        
+
+        new_product = ( product_name, buying_price, selling_price )
+        insert_products(new_product)
+        print("Product added successfully")
+    return redirect(url_for('products'))
+
 
 
 @app.route('/sales')

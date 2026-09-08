@@ -24,6 +24,7 @@ def insert_products(product_values):
 
 
 
+
 def get_sales():
     cur.execute("select * from sales")
     sales = cur.fetchall()

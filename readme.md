@@ -496,7 +496,7 @@ pid    name\
 5.button of type submit
 
 
-*methods*
+*http methods*
 1.GET 
  -> move data from a server to a client
  -> e.g. displaying products / sales / stock
@@ -514,3 +514,38 @@ pid    name\
 p_name : "Eggs"
 b_price : 17
 s_price : 20
+
+
+*redirection* -> taking a user from one resource to another 
+-> to enable redirection, we use the function redirect(url_for(''))
+
+redirect() -> redirect a user to another resource
+url_for() -> thiis function takes the name of the view function in the route to be redirected to
+
+
+*http status codes*
+-> special codes / designated numbers meant to be a way for the server to respond to user requests or actions
+-> they have categories based on the type of message
+
+1.Informational responses
+  -> General purpose responses
+  -> the server has received a request and is contiuning to process it
+  -> they start with 1xx
+2.Successful responses
+   -> Signify that a request was executed successfully
+   -> start with 2xx
+   -> e.g 200 -> OK 
+      e.g 201 -> Created successfully => adding a product
+3.Redirection responses
+   -> represent redirection messages 
+   -> start with 3XX
+4.Client errors
+   -> error on client side
+   -> start with 4XX
+5.Server errors
+   -> error on server side
+   -> start with 5XX 
+
+
+   *task*
+   -> Implement adding sales using a form in the sales page
