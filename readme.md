@@ -549,3 +549,21 @@ url_for() -> thiis function takes the name of the view function in the route to 
 
    *task*
    -> Implement adding sales using a form in the sales page
+
+
+   *posting with a form in a modal*
+
+   select a product and quantity
+           |
+    we pick the product id of that product 
+           |
+    insert product id along with quantity
+
+*Task*
+1.modify add products form to use a modal 
+2.implement posting stock with a modal
+
+
+
+*flash notifications*
+*making purchases*

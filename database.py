@@ -89,3 +89,6 @@ def get_profit_per_product():
     profit_per_product = cur.fetchall()
     return profit_per_product
 
+
+
+x = 5
