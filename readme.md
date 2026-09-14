@@ -566,4 +566,88 @@ url_for() -> thiis function takes the name of the view function in the route to 
 
 
 *flash notifications*
+-> One time notifications to the user to give them feedback based on some action
+-> Flash messages are enabled by flash() function which is imported from flask
+-> flash() can take 2 arguments :
+    1.Message -> the text to be displayed e.g. product added successfully
+    2.Message category -> the type of message displayed
+         
+*Message Categories*
+1.success : green
+2.error/danger : red
+3.warning : yellow
+4.info : blue
+
+N/B:- Flash messages are stored in a *session cookie*  ---> to secure them we use a secret key
 *making purchases*
+--> Goal: We want to make sales only from products that have enough stock
+-> if a product has enough stock, complete sale otherwise if not, we fail to complete sale and notify user
+
+
+100 eggs --> initial stock
+sell 20
+new stock value = 80
+
+
+myduka_db=# select * from sales;
+ id | pid | quantity |         created_at         
+----+-----+----------+----------------------------
+  1 |   1 |       20 | 2026-08-19 15:15:46.763464
+  3 |   1 |       20 | 2026-08-19 15:16:18.429507
+  4 |   2 |       10 | 2026-08-19 15:16:18.432971
+  6 |   2 |       15 | 2026-08-19 15:49:05.265689
+  7 |   2 |      120 | 2026-08-19 18:54:52.085746
+  9 |   1 |       10 | 2026-09-09 15:17:29.260503
+(6 rows)
+
+myduka_db=# select * from stock;
+ id | pid | stock_quantity |         created_at         
+----+-----+----------------+----------------------------
+  1 |   1 |            100 | 2026-08-19 15:31:27.92186
+  2 |   2 |             50 | 2026-08-19 15:31:27.929297
+  3 |   1 |            100 | 2026-08-19 16:09:05.873015
+  4 |   2 |             50 | 2026-08-19 16:09:05.879158
+  5 |   1 |            300 | 2026-08-19 18:58:49.423274
+(5 rows)
+
+
+sales => amount of product out
+stock => product in
+
+remaining stock = stock - sales per product
+
+500 - 50 =
+
+select sum(stock.stock_quantity) from stock where pid =
+
+
+(10) => 10
+(10,) => a tuple containing a single value of 10
+
+*fetchone()*-> returns a tuple -> used when we return a single value 
+*fetchall()*-> returns a list of tuples-> used when there is more than one value to be returned e.g products, sales , stock data
+
+500 - 50 = 450
+
+[(450,)] ---> [0][0]
+(450,) ---> [0]
+
+(500,) 
+(50,)
+
+
+adds a product ---> adds stock on that product ----> make sales on that product
+ --> check stock again before making another sale
+
+ adds a product ---> add no stock ----> make no sale
+ add a product ---> add some stock ---> make no sale
+
+ zero vs null / nil
+ zero -> actual value --> 500 - 500 = 0
+ null -> value doesnt exist to begin with 
+
+ null - null --> error 
+ 200 - null --> error
+
+ 0 - 0 = 0
+ 200 - 0 = 200

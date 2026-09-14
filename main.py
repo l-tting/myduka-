@@ -1,8 +1,10 @@
-from flask import Flask , render_template,request, redirect,url_for
-from database import get_products, get_sales,get_stock,insert_products,insert_sales
+from flask import Flask , render_template,request, redirect,url_for,flash
+from database import get_products, get_sales,get_stock,insert_products,insert_sales,insert_stock,available_stock
 
 # flask instance
 app = Flask(__name__)
+
+app.secret_key = '99enjju993jdi909ewjkkjd00wjs93293'
 
 #home route
 @app.route('/')   # decorator func
@@ -28,7 +30,8 @@ def add_products():
 
         new_product = ( product_name, buying_price, selling_price )
         insert_products(new_product)
-        print("Product added successfully")
+        flash("Product added successfully",'success')
+        
     return redirect(url_for('products'))
 
 
@@ -47,9 +50,14 @@ def make_sale():
         quantity = request.form['quantity']
 
         new_sale = (pid, quantity)
+        
+        check_stock = available_stock(pid)
+        if check_stock < float(quantity):
+              flash(f"Insufficient stock to complete sale, only {check_stock} available ",'danger')
+              return redirect(url_for('sales'))
+        
         insert_sales(new_sale)
-
-        print("Sale made successdfully")
+        flash("Sale made successdfully",'success')
 
     return redirect(url_for('sales'))
 
@@ -57,7 +65,22 @@ def make_sale():
 @app.route('/stock')
 def stock():
     stock = get_stock()
-    return render_template('stock.html',stock = stock)
+    products = get_products()
+    return render_template('stock.html',stock = stock,products = products)
+
+
+@app.route('/add_stock',methods=['GET','POST'])
+def add_stock():
+    if request.method == 'POST':
+        pid = request.form['pid']
+        stock_quantity = request.form['s_quantity']
+
+        new_stock= (pid, stock_quantity)
+        insert_stock(new_stock)
+
+        flash("Stock added successdfully",'success')
+
+    return redirect(url_for('stock'))
 
 
 

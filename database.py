@@ -13,8 +13,7 @@ def get_products():
     products = cur.fetchall()
     return products
 
-# prods = get_products()
-# print(prods)
+
 
 
 
@@ -22,7 +21,7 @@ def insert_products(product_values):
     cur.execute("insert into products(name,buying_price,selling_price)values(%s,%s,%s)",product_values)
     conn.commit()
 
-
+product1 = ('eggs',50,60)
 
 
 def get_sales():
@@ -91,4 +90,14 @@ def get_profit_per_product():
 
 
 
-x = 5
+def available_stock(pid):
+    cur.execute("select sum(stock.stock_quantity) from stock where pid = %s",(pid,))
+    total_stock = cur.fetchone()[0] or 0
+
+    cur.execute("select sum(sales.quantity) from sales where pid = %s",(pid,))
+    total_sold = cur.fetchone()[0] or 0
+
+    return total_stock - total_sold
+
+check_stock  = available_stock(1)
+print(check_stock)
