@@ -651,3 +651,63 @@ adds a product ---> adds stock on that product ----> make sales on that product
 
  0 - 0 = 0
  200 - 0 = 200
+
+ *AUTHENTICATION*
+Authentication : process of verifying the identity of a user 
+         -> use passwords, pins , biometrics
+         -> asks the question 'who are you?'
+Authorization
+        -> determines the access rghts of a user in a system
+        -> checks for what a user is allowed to do
+
+
+  *User registration workflow*
+1.User is provided with a registration form to fill
+2.User fills all relevant credentials and submits the form
+3.Form is submitted to register route in the server for processing
+4.The request object extracts user information using the key(name attribute)
+5.confirm that the user attempting to register hasnt already been registered using their email(unique)
+6.If user exists,flash that user already exists and suggest they login instead
+7.If user doesnt exist, hash their password and insert user into users table
+8.Flash successful registration and redirect to login
+
+
+1 - Jane Doe  - janedoe@gmail.com  -0712345678 - Jane@123
+
+
+*Password Hashing*
+-> Is the process of converting plain text data into an encrypted format that is hard to decipher / read / understand
+-> Password hashing ensures passwords are protected by making them difficult to figure out
+
+Jane@123----> $ey.99wnu99d93990djnju883hu992iiujhd99ejjdjd
+
+N/B:- hashing a value always reproduces the same exact hash everytime
+
+Jane@123----> $ey.99wnu99d93990djnju883hu992iiujhd99ejjdjd
+Jane@123----> $ey.99wnu99d93990djnju883hu992iiujhd99ejjdjd
+Jane@123----> $ey.99wnu99d93990djnju883hu992iiujhd99ejjdjd
+
+
+person A ------> sending a file -----> hashed to produce a hash value ----> person B receives the file -> hash the
+received file  ===> if the two hashes match it means the file has not tampered with
+
+
+person A hashes the file -> 003mid09o3j99djd99dj
+person B hashed the file -> 00wemnd662vvsjje9idj
+
+
+*rainbow table attack* 
+-> This is a type of attack launched by a hacker targetting common passwords and their hashed 
+
+*password salting*
+-> the process of adding random text to a plain text password before hashing it so that the end result becomes more complex
+
+Abc@123kks9sjjsooso -> $ghye88djd00wkjkd00wkksoosposokduyy377dhhfooekkdkd
+
+
+Google -> Abc@123 + e0oodejcdiid -> $e8ienj0mkw00-wkdkdkkfjkjfjjjfjf
+Pinterest -> Abc@123 + 288uehhejm -> $fg299wmjkd002klke0pdkkdjudjjdjd
+
+flask-bcrypt
+pip install flask-bcrypt
+  
