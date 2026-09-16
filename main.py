@@ -94,8 +94,26 @@ def dashboard():
 
 
 
-@app.route('/login')
+@app.route('/login',methods=['GET','POST'])
 def login():
+    if request.method == "POST":
+        email = request.form['email']
+        password = request.form['password']
+
+        existing_user = check_user_exists(email)
+        if not existing_user:
+            flash("User with this email not registered",'danger')
+            return redirect(url_for('login'))
+
+        check_password = bcrypt.check_password_hash(existing_user[-1],password)
+
+        if check_password:
+            flash("Login successful",'success')
+            return redirect(url_for('dashboard'))
+        else:
+            flash("Incorrect password,try again","danger")
+            return redirect(url_for('login'))
+        
     return render_template('login.html')
 
 

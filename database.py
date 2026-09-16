@@ -15,8 +15,6 @@ def get_products():
 
 
 
-
-
 def insert_products(product_values):
     cur.execute("insert into products(name,buying_price,selling_price)values(%s,%s,%s)",product_values)
     conn.commit()
@@ -45,8 +43,6 @@ def get_stock():
 def insert_stock(stock_values):
     cur.execute("insert into stock(pid,stock_quantity)values(%s,%s)",stock_values)
     conn.commit()
-
-
 
 
 def get_sales_per_product():
@@ -111,3 +107,8 @@ def insert_user(user_details):
     cur.execute("insert into users(full_name,email,phone_number,password)values(%s,%s,%s,%s)",user_details)
     conn.commit()
 
+
+
+user = check_user_exists('janedoe@gmail.com')
+print(user)
+(4, 'Jane Doe', 'janedoe@gmail.com', '0714989269', '$2b$12$1CUX8fu4xGOHUdkRw7RQsORHnQkA6EQcG64x5gPd3qLjggzs75jje')

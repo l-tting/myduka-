@@ -711,3 +711,61 @@ Pinterest -> Abc@123 + 288uehhejm -> $fg299wmjkd002klke0pdkkdjudjjdjd
 flask-bcrypt
 pip install flask-bcrypt
   
+print(5)
+
+Computer works with only binaries (0 and 1)
+
+
+hello world ------> bytes(0 and 1s)
+
+ASCII
+
+A -> 65 ----> 00101
+a -> 97 ----> 10011
+
+
+Unicode -> the universal representation of any character in any language in numeric format
+
+$ -> U-449 --> unicode point ----> bytes
+A -> U-1772
+?
+
+utf-8 ---> a way of converting unicode points to bytes and vice versa
+
+print
+
+
+hello ----> unicode point.  -----> bytes. -----> unicode -----> hello
+
+
+Jane@123 + salt ----> hashing ----> bytes -----> decode with utf-8 ----> to get a string hash value like $2b$12$1CUX8fu4xGOHUdkRw7RQsORHnQkA6EQcG64x5gPd3qLjggzs75jje
+
+
+
+*Login workflow*
+1.User is provided with a form to fill
+2.user fills in login credentials and submits the form
+3.Form is submitted to login route for processing
+4.request object extracts login data using request.form method
+5.use the user's email to determine if they are registered
+6.if user is not registered , notify to register instead and stop login
+7.if user is registered , check if password is correct
+8.if password is incorrect, notify with incorrect password message
+9.if password is correct, store user session , redirect to dashboard and notify with success message 
+
+
+janedoe@gmail.com
+Jane@123
+
+$2b$12$1CUX8fu4xGOHUdkRw7RQsORHnQkA6EQcG64x5gPd3qLjggzs75jje
+
+
+*N/B:* ---> Hashing is a one way function , meaning once a plain text value is hashed to produce a hash value you cannot
+decrypt the hash back to go back to the plain text
+
+In that case, we take the user's password , salt and hash it with the same salt and then compare the 2 hashes 
+
+
+*password hash*-> hashed password stored in the db
+*candidate password* ---> password the user fills when attempting to log in 
+
