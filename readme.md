@@ -769,3 +769,38 @@ In that case, we take the user's password , salt and hash it with the same salt 
 *password hash*-> hashed password stored in the db
 *candidate password* ---> password the user fills when attempting to log in 
 
+
+*session*
+http -> is stateless
+     -> meaning that after a request is sent and a response given , the server doesnt recall any services given / accessed 
+
+
+     user ----> sends request to server to get products page
+     server ---> responds with the product page
+    once the page is rendered / given , the server forgets everything
+
+user logs in ---> access some page
+when they try to access another page , they are told to login again
+
+user logs in
+server uses session remember a user
+everytime a user sends a request, server checks if session is valid
+if valid gives access, user doesnt have to login again
+
+
+*cookie*
+-> a small piece of data that a website asks your browser to store
+*session*
+-> a way for the server to remember who you are using specific info e.g email
+*session cookie*
+-> a cookie used to identify a user's session
+
+
+session data we're storing ===> email
+if email is not in session ---> user has not logged in
+
+
+protect -> products page, sales page , stock page & dashboard page
+
+-> there is no need to protect add products because add products occurs in the products -> same thing
+for add sales and add stock
